@@ -48,6 +48,47 @@ console.log(isEveryoneHere(users));
 
 ### Solution
 
+Using hasOwnProperty():
+
+```javascript
+function isEveryoneHere(obj) {
+  // change code below this line
+  if (obj.hasOwnProperty('Alan') && obj.hasOwnProperty('Jeff') && obj.hasOwnProperty('Sarah') && obj.hasOwnProperty('Ryan')){
+    return true;
+  } else {
+    return false;
+  }
+  // change code above this line
+}
+
+console.log(isEveryoneHere(users));
+```
+And using `prop in objectName`:
+
+```javascript
+function isEveryoneHere(obj) {
+  // change code below this line
+  if ('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users) {
+    return true;
+  } else {
+    return false;
+  }
+  // change code above this line
+}
+```
+Or we could use the ternary operator:
+
+```javascript
+function isEveryoneHere(obj) {
+  // change code below this line
+  return ('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users) ? true : false;
+  // change code above this line
+}
+
+console.log(isEveryoneHere(users));
+```
+The below passes the FCC test but ~~I'm not 100% on the code~~ it's wrong.
+
 ```javascript
 
 let users = {
@@ -81,42 +122,12 @@ function isEveryoneHere(obj) {
 
 console.log(isEveryoneHere(users));
 ```
-The above passes the FCC test but I'm not 100% on the code.
+I could add a bunch of properties, like `('Alan', 'Jeff', 'Sarah', 'Ryan', 'Otto', 'Oliver', 'Max')` and it would still return true. Why? Because it's only testing for the first property, `Alan`. 
 
-```javascript
-let users = {
-  Alan: {
-    age: 27,
-    online: true
-  },
-  Jeff: {
-    age: 32,
-    online: true
-  },
-  Sarah: {
-    age: 48,
-    online: true
-  },
-  Ryan: {
-    age: 19,
-    online: true
-  }
-};
-
-function isEveryoneHere(obj) {
-  // change code below this line
-  return ('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users) ? true : false;
-  // change code above this line
-}
-
-console.log(isEveryoneHere(users));
-```
-Using the `in` keyword. 
+## My Notes
 
 From [Methods to determine if an Object has a given property](https://toddmotto.com/methods-to-determine-if-an-object-has-a-given-property/):
 > The `in` operator is probably your best friend for checking the existence of a property, it’s also pretty concise.
-
-## My Notes
 
 Need to work on using the ternary operator.
 
