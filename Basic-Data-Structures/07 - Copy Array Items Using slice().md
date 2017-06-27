@@ -42,3 +42,44 @@ function forecast(arr) {
 // do not change code below this line
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
 ```
+
+## My Notes
+
+I had first tried to use the following code:
+
+```
+arr.slice(2, 4);
+return arr;
+```
+This returns the original array since I'm not storing the [new array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) in a new variable created by slice().
+
+A more verbose statement would be:
+
+```
+function forecast(arr) {
+  // change code below this line
+    arr = arr.slice(2, 4);
+    console.log(arr);
+    return arr;
+}
+
+// do not change code below this line
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+```
+
+But if we simply want to return the new value to the caller (in this case `forecast()`), using `return arr.slice(2, 4);` seems to be the cleanest method.
+
+From [stackoverflow](https://stackoverflow.com/questions/7187114/when-to-use-return-and-what-happens-to-returned-data):
+
+> In which cases should I use return?
+> When the function is generating some value and you want to pass it back to the caller. Take Math.pow for example. It takes two arguments, the base and the exponent and returns the base raised to the exponent.
+
+> When a value is returned from a function, what happens to it? is it stored somewhere?
+> If you want to store the return value, then you have to assign it to a variable
+
+> `var value = someFunction();`
+
+> This stores the return value of someFunction in value. If you call the function without assigning the return value, then the value is just silently dropped:
+
+> `someFunction();`
+
