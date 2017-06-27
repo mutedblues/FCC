@@ -87,3 +87,14 @@ function countOnline(obj) {
 
 console.log(countOnline(users));
 ```
+
+## My Notes
+
+Let's break this down...
+
+`let n = 0 `: We declare `n` and set it to 0 because we need to be able to track how many users are online - we're adding to our number with each loop
+
+`for (let user in obj)`: Allows us to iterate through all keys within the object. We've created a new variable `user` as a generic reference for the individual users in the `users` object. Could have named `user` anything really, but `user` makes sense here. `obj` is the variable name that here relates to the `users` object but with our code we could run the function on a different object - we'd simply pass that object name in the console.log above.
+
+`if (obj[user].online) n++`: If the `user` in the `users` object is online (equals `true`), then add 1 to `n`. We can't use dot notation for `user` since it is a variable not a string. We could change this to `obj[user]["online"]` but dot notation is more succinct for accessing the `online` property.
+
