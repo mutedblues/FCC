@@ -61,4 +61,6 @@ smallestCommons([1,5]);
 
 ## My Notes
 
-The formula that the Mod mentioned in the comments at https://teamtreehouse.com/community/javascript-find-least-common-multiple made it possible to work through the math.
+The formula that the Mod mentioned in the comments at https://teamtreehouse.com/community/javascript-find-least-common-multiple made it possible to work through the math. 
+
+For finding the GCD, I used the Euclidean Algorithm that is explained at https://www.youtube.com/watch?v=6vWx5trbj6c
