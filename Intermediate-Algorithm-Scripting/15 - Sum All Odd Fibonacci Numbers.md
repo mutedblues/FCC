@@ -41,3 +41,7 @@ function sumFibs(num) {
 
 sumFibs(4);
 ```
+
+## My Notes
+
+Interesting breakdown of various solutions: https://www.thepolyglotdeveloper.com/2015/01/fibonacci-sequence-printed-javascript/
