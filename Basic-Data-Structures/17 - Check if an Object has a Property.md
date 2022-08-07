@@ -68,7 +68,7 @@ And using `prop in objectName`:
 ```javascript
 function isEveryoneHere(obj) {
   // change code below this line
-  if ('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users) {
+  if ('Alan' in obj && 'Jeff' in obj && 'Sarah' in obj && 'Ryan' in obj) {
     return true;
   } else {
     return false;
